@@ -78,9 +78,17 @@ function temperatureCtoF(celsiusTemp) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(tempNum, unit) {
+  if(unit === "F" || unit === "f"){
+    return tempNum + "F";
+  } else {
+    let fTemp = temperatureCtoF(tempNum);
+    return fTemp + "F";
+  }
 }
+
+// console.log(temperatureInF(75, "F"));
+// console.log(temperatureInF(24, "C"));
 
 
 /**
@@ -99,9 +107,16 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(i, n, e) {
+  const person = {
+    id: i,
+    name: n,
+    email: e
+  }
+  return person;
 }
+
+// console.log(makePersonObject(5, "Leia", "leia@leia.com"));
 
 /**
  * ### Challenge `getName`
@@ -116,10 +131,15 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(nameObject) {
+  for(let key in nameObject){
+    if(key === "name"){
+      return "Hello, my name is " + nameObject.name;
+    }
+  }
 }
 
+// console.log(getName({id: 1, name: "Leia", email: "leia@leia.com"}));
 
 /**
  * ### Challenge `appleIndex`
@@ -136,9 +156,15 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(stringArray) {
+  for(let i = 0; i < stringArray.length; i++){
+    if(stringArray[i] === "apple"){
+      return i;
+    }
+  }
 }
+
+// console.log(appleIndex(['orange', 'grape', 'apple', 'bannana', 'strawberry']));
 
 /**
  * ### Challenge `isItAnApple`
@@ -155,11 +181,21 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(stringArray) {
+  let boolArray = [];
+
+  for(let i = 0; i < stringArray.length; i++){
+    if(stringArray[i] === "apple"){
+     boolArray.push(true);
+    } else {
+      boolArray.push(false);
+    }
+  }
+  return boolArray;
 }
 
-
+// console.log(isItAnApple([ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]));
+// console.log("[ false, true, false, false, true, false ]");
 
 /*
 // ⭐️ Example Test Data ⭐️
