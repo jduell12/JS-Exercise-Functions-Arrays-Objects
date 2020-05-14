@@ -220,7 +220,7 @@ var inventory = [
 */
 
 // Data from file 
-//var data = require('data./inventory.js'); 
+const data = require('data./inventory.js'); 
 
 /**
   * ### Example Array Challenge:
@@ -240,6 +240,7 @@ function get3rdCar(inventory) {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
+console.log(get3rdCar(data));
 
 /**
  * ### Challenge `getCarInfoByIndex`
