@@ -445,7 +445,15 @@ function getGermanCars(inventory) {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(odometerReading) {
+  return {
+    odometer: odometerReading,
+    drive: function(distance){
+      this.odometer = this.odometer + distance;
+      return this.odometer;
+    }
+  };
 }
+// console.log(carMaker(1000));
+// console.log(carMaker(1000).drive(500));
 
